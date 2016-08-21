@@ -1,6 +1,5 @@
 body {
   background: url(../images/asia.jpeg) no-repeat;
-  background-color: black;
   background-size:cover;
   min-width: 100vh;
   font-family: 'Source Sans Pro', sans-serif;
@@ -8,14 +7,13 @@ body {
 
 header {
   text-align: right;
-  margin: 15px 15px 0 0
+  margin: 15px 15px 0 0;
 }
 
 #logo>*{
   display: inline;
   margin-bottom: 0
 }
-
 
 .container {
   margin: 0 auto;
@@ -55,7 +53,7 @@ h4 {
 }
 
 a {
-  color: black;
+  color: rgb(0, 0, 0);
 }
 
 #logo > * {
