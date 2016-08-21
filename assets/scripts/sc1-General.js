@@ -1,7 +1,4 @@
 // GLOBAL VARIABLES
-let countryLat
-let countryLong
-let countryZoom
 let languageArr
 
 // CONTROLLER FUNCTION: handles building general info on country
@@ -9,7 +6,6 @@ function buildSection1() {
   extractName()
   extractCapital()
   appendFlag()
-  extractMapCoordinates()
   extractTime()
   extractLanguage()
 }
@@ -32,7 +28,7 @@ function extractCapital(){
       }
       $("#capital").append(capital.toUpperCase());
     })
-    .catch((error)=> {
+    .catch((error)=>{
       console.error(error)
     })
   } else {
@@ -52,31 +48,15 @@ function appendFlag(){
   }
 }
 
-// HELPER FUNCTION to initMap()
-function extractMapCoordinates(){
-  countryLat = parseFloat(parsedData.maps.lat)
-  countryLong = parseFloat(parsedData.maps.long)
-  countryZoom = parseFloat(parsedData.maps.zoom-1)
-  // addGoogMapsSRC()  // attempt to hide key
-}
-
-// function addGoogMapsSRC (){
-//   let mapsKey = 'https://maps.googleapis.com/maps/api/js?key='+googKey+'&callback=initMap'
-//   $("#key").attr('src', mapsKey)
-// }
 
 // FUNCTION: generates GOOGmaps
 function initMap() {
   let mapDiv = document.getElementById("map");
   let map = new google.maps.Map(mapDiv, {
-      center: {lat: countryLat, lng: countryLong},
-      zoom: countryZoom
+      center: {lat: parseFloat(parsedData.maps.lat), lng: parseFloat(parsedData.maps.long)},
+      zoom: parseFloat(parsedData.maps.zoom-1)
   });
 }
-
-// $('#generalInfo').click(()=>{
-//   setTimeout(initMap, 0)
-// })
 
 function extractTime(){
   getTZData()
@@ -90,16 +70,32 @@ function extractTime(){
     $("#timeZone").append(localTZName)
     $("#localTD").append(localTime);
   })
-  .catch((error)=> {
+  .catch((error)=>{
     console.error(error)
   })
 }
 
 // HELPER FUNCTION to extractTime()
 function getTZData(){
+  let countryLat = extractLatitude()
+  let countryLong = extractLongitude()
+  let countryZoom = extractZoom()
   let timeStampUTC = Date.now()/1000
   let googTZapiURL = "https://maps.googleapis.com/maps/api/timezone/json?location=" + countryLat + "," + countryLong + "&timestamp=" + timeStampUTC + "&key=" + googKey
   return $.get(googTZapiURL)
+}
+
+// HELPER FUNCTIONs to getTZData()
+function extractLatitude(){
+  return parseFloat(parsedData.maps.lat)
+}
+
+function extractLongitude(){
+  return parseFloat(parsedData.maps.long)
+}
+
+function extractZoom(){
+  return parseFloat(parsedData.maps.zoom-1)
 }
 
 // HELPER FUNCTION to extractTime()
@@ -129,8 +125,3 @@ function extractLanguage(){
   }
   $("#langCountry").append(countryName, ": ")
 }
-
-
-// travelbriefing.org Branding
-// Google Maps Branding
-// Google TimeZone Branding

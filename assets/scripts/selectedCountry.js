@@ -1,3 +1,5 @@
+// Add a function to localStorage.clear() when leaving site?
+
 // GLOBAL VARIABLES
 let countryName = localStorage.getItem("selectedCountry")
 let parsedData
@@ -22,8 +24,8 @@ $(function loadPage() {
       console.error(error)
     })
   } else {
-    console.log("Country data from localStorage fetched")
     let data = localStorage.getItem("countryInfo")
+    console.log("Country data from localStorage fetched")
     parsedData = JSON.parse(data);
     setTimeout(initMap, 0)
     buildSection1()         // how to fadein? .delay(2000).fadeIn(1000)

@@ -42,7 +42,7 @@ function findLangKey(langsToTransArr) {
 }
 
 function makeLanguagePairs(langKeys){
-  for(key in langKeys){
+  for(let key in langKeys){
     langKeys[key] = "en-" + langKeys[key]
   }
   return langKeys                          // langKeys: en-ru
@@ -50,7 +50,7 @@ function makeLanguagePairs(langKeys){
 
 // FUNCTION: builds URL for GET request
 function createYandexURLs(pairs) {
-  for(pair in pairs){
+  for(let pair in pairs){
     yandexURLArr.push("https://translate.yandex.net/api/v1.5/tr.json/translate?lang=" + pairs[pair]+ "&key=" + yandexKey + "&text=")
   }
 }

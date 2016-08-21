@@ -33,7 +33,7 @@ function parseNYTData(newsURL){
       let snippet = article["snippet"]
       let pubDate = formatPubDate(article["pub_date"])
 
-      let $hdLnHREF = $("<a>", {"href": articleURL})
+      let $hdLnHREF = $("<a>", {"href": articleURL})   //figure out why this dosen't work
       let $hdLnText = $("<h6>")
       let $hdLn =$("<span>")
       $hdLn.append($hdLnText.append(headline))
@@ -74,7 +74,6 @@ function guardianURL() {
   let requestedBegDate = setBegDate()
   let requestedEndDate = setEndDate()
   let guardianAPIURL="https://content.guardianapis.com/search?q=" + countryName.replace(/ /g, "%20") + "&section=world|international|travel&tag=-uk/uk,(world/" + countryName.replace(/ /g, "-").toLowerCase() + "|world/" + countryName.replace(/ /g, "").toLowerCase() + ")&show-fields=trailText,thumbnail&show-editors-picks=true&to-date=" + requestedEndDate+"&from-date="+requestedBegDate +"&order-by=newest&api-key=" + guardianKey
-  console.log(guardianAPIURL)
   return guardianAPIURL
 }
 
@@ -82,7 +81,6 @@ function parseGuardianData(newsURL){
   $.get(newsURL)
   .then((data)=>{
     let articlesArr = data.response.results           //arr of obj
-    console.log(data);
     for(let index in articlesArr){
       let article = articlesArr[index]
       let headline = article.webTitle

@@ -1,85 +1,81 @@
+html {
+  height: 100%;
+  width:100%;
+}
+
 body {
   background: url(../images/flight.jpeg) no-repeat;
-  background-color: black;
   background-size:cover;
   color: white;
 }
 
-header {
+.container {
+  margin: 0 auto;
+  width: 95%;
+}
+
+.col.s12 {
   text-align: right;
-  margin-right: 15px;
-  margin-top: 15px;
+  margin-top: 1rem;
 }
 
-header > * {
+.col.s12 > a > * {
   display: inline;
+  text-shadow: 0 0 4px rgb(0,0,0);
 }
 
-
-.wrapper{
-  display: flex;
-  flex-direction: column;
-  max-height: 90vh;
-}
-
-
-div > p {
-  margin: 0 0 10px;
-}
-
-.search {
-  min-height: 88vh;
-  display: flex;
-  align-items: center;
-  letter-spacing: 3px;
-}
-
-
-#searchBoxWrapper {
-  margin-bottom: 100px;
-  background-color: rgba(68, 68, 68, 0.6);
-  padding: 35px 40px;
-  border-radius: 5px;
-  width: 40%;
-}
-
-#miniWrapper {
-  position: relative;
-  width: 85%;
-  margin: auto;
-}
-
-#miniWrapper > h3 {
+a {
+  color:rgb(255, 255, 255);
   margin: 0
 }
 
+a:hover {
+  color:rgb(237, 21, 21);
+  text-decoration: none;
+}
+
+.container.valign.input {
+  background-color: rgba(68, 68, 68, 0.8);
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  padding: 2rem 6rem;
+  border-radius: .35rem;
+  width: 40rem;
+}
+
+.left-align {
+  margin: 0 0 1rem 0;
+  letter-spacing: .20rem
+}
+
+#searchBox:focus {
+  border-bottom: .5px solid rgb(255, 0, 0);
+  box-shadow: 0 .5px 0 0 rgb(255, 0, 0);
+}
+
+/*#searchBox:focus + label {
+  color: red;
+}*/
+
 #submit {
   background-color: rgba(225, 225, 225, 0.6);
-  border: .5px solid lightgray;
+  border: .5px solid rgb(234, 234, 234);
   width: 100%
 }
 
-#submitBtn {
-  text-align: center;
-}
-
-.btn_margin {
-  margin-bottom: 150px
-}
-
-.btn_submit {
-  padding: 15px 0 15px 0;
-}
-
-
-footer>a{
-  color: white;
-}
-
 footer {
-  font-size: 12px;
-  margin-right: 31.828px;
-  color: rgb(255, 0, 0);
-  font-weight: bold;
-
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem 2.25rem 1rem 0 ;
+  font-size: 14px;
+  letter-spacing: .075rem;
+  text-shadow: 0 0 8px rgb(0,0,0);
 }

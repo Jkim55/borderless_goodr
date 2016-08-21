@@ -1,45 +1,53 @@
+html {
+  height: 100%;
+  width:100%;
+}
+
 body {
   background: url(../images/marrakech.jpeg) no-repeat;
-  background-color: black;
   background-size:cover;
-  min-width: 100vh;
-  color: black;
+  background-attachment: fixed;
+  background-position: bottom;
 }
 
-p {
-  margin: 0 0 10px 0;
+.container {
+  margin: 0 auto;
+  width: 95%;
+}
+.col.s12 {
+  text-align: right;
+  margin-top: 1rem;
 }
 
-#logo {
-  display: flex;
-  justify-content: flex-end;
-  align-items: baseline;
-}
-#logo h3{
-  display: block;
+.col.s12 > a > * {
+  display: inline;
+  text-shadow: none;
 }
 
-.vertical_center{
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  letter-spacing: 3px
+a {
+  color:rgb(0, 0, 0);
+  margin: 0
 }
 
-/*.vertical_center>*{
-  display: block;
-}*/
-
-.btn_margin {
-  margin-bottom: 150px
+a:hover {
+  color:rgb(255, 0, 0);
+  text-decoration: none
 }
 
-.btn_submit {
-  padding: 15px 0 15px 0;
+.container.main{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1.5rem 1.5rem .5rem 1.5rem;
+  margin-bottom: 1rem;
+  background-color:rgba(225, 225, 225, 0.3);
 }
 
-footer>a{
-  align-content: flex-end;
-  justify-content: flex-end;
-  color: white;
+.container.main > div {
+  margin-bottom: 1rem
+}
+
+.container.main > div > * {
+  display: inline;
 }
