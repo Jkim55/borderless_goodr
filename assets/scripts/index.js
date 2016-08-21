@@ -13,9 +13,9 @@ $(function prePopulate() {
     .then((data)=>{
       data = JSON.stringify(data);
       localStorage.setItem("allCountriesJSON", data)
-      parsedData = JSON.parse(data);
-      for (let country in parsedData{
-        countryNames.push(parsedData[country].name)
+      data = JSON.parse(data);
+      for (let country in data) {
+        countryNames.push(data[country].name)
       }
     })
     .catch((error)=> {
@@ -23,6 +23,7 @@ $(function prePopulate() {
     })
   } else {
     let allCountriesJSON = localStorage.getItem("allCountriesJSON")
+    allCountriesJSON = JSON.parse(allCountriesJSON);
     for (let country in allCountriesJSON){
       countryNames.push(allCountriesJSON[country].name)
     }
