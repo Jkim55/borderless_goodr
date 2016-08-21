@@ -4,10 +4,28 @@ let selectedCountryName
 
 // FUNCTION: consumes travelbriefing's all-countries JSON & prepopulate search options for search box:index
 $(function prePopulate() {
-  localStorage.clear()
+  localStorage.removeItem('selectedCountry')                       // localStorage.clear()
+  localStorage.removeItem('countryInfo')
   let countryNames = []
-  for (let country in allCountries_JSON){
-    countryNames.push(allCountries_JSON[country].name)
+  if (localStorage.getItem("allCountriesJSON") === null){
+    const mainURL="https://galvanize-cors-proxy.herokuapp.com/https://travelbriefing.org/countries.json"
+    $.get(mainURL)
+    .then((data)=>{
+      data = JSON.stringify(data);
+      localStorage.setItem("allCountriesJSON", data)
+      parsedData = JSON.parse(data);
+      for (let country in parsedData{
+        countryNames.push(parsedData[country].name)
+      }
+    })
+    .catch((error)=> {
+      console.error(error)
+    })
+  } else {
+    let allCountriesJSON = localStorage.getItem("allCountriesJSON")
+    for (let country in allCountriesJSON){
+      countryNames.push(allCountriesJSON[country].name)
+    }
   }
   $("#searchBox").autocomplete({
     source: countryNames
