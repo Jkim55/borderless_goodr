@@ -39,7 +39,7 @@ a:hover {
 
 .tabs {
   background-color: transparent;
-  margin-top:2em;
+  margin:2em 0 1em 0;
 }
 
 .tabs .tab a{
@@ -56,19 +56,14 @@ a:hover {
   background-color:rgb(255, 0, 0);
 }
 
-.mainSection{
-  background-color:rgba(225, 225, 225, 0.6);
-  overflow-y: scroll;
+.s12.section {
   position: relative;
   margin-top: 1rem;
-  min-height: 32rem;
+  background-color:rgba(225, 225, 225, 0.6);
+  overflow-y: scroll;
   padding:2em;
 }
 
-.container.section {
-  /*margin: 0 0 0 0;*/
-  /*padding: 10px;*/
-}
 #fullName {
   /*margin: 0 0 0 0*/
 }
@@ -84,7 +79,6 @@ a:hover {
 }
 
 #flag {
-  margin: .5rem 0 0 2rem;
   max-height: 6rem;
 }
 
@@ -104,7 +98,6 @@ a:hover {
 #map {
   width: 38rem;
   height: 25rem;
-  margin: .5rem 1.5rem;
   padding: 0:
 }
 
