@@ -104,11 +104,11 @@ function extractFXWidget() {
 }
 
 $("#fxBtn").click((event)=>{
-  let $fxInput = $("#fxInput").val()
-  let $fxCalc = parseFloat($fxInput)   // (1) Capture user input
+  let $fxExchanger = $("#fxExchanger").val()
+  let $fxCalc = parseFloat($fxExchanger)   // (1) Capture user input
   $fxCalc = ($fxCalc * fxRate).toFixed(2)
   let $fxResults = $("<div>")
-  let snippet = $fxInput + " " + currencyName + " (" + currencySymbol + ") is equivalant to $" + $fxCalc + " USD"
+  let snippet = $fxExchanger + " " + currencyName + " (" + currencySymbol + ") is equivalant to $" + $fxCalc + " USD"
   $fxResults.append(snippet)
   $("#fxList").append($fxResults)
 })

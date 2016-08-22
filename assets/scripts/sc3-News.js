@@ -2,6 +2,7 @@
 function buildSection3() {
   nytData()
   guardianData()
+  printBegDateRange()
 }
 
 // HELPER FUNCTION: takes in nytURL() and parseNYTData() to output results from NYT
@@ -44,19 +45,20 @@ function parseNYTData(newsURL){
       let $snippet = $("<div>")
       $snippet.append(snippet)
 
-      let $image = $("<img>", {
-        "src": thumbnailURL,
-        "width": "150px",
-        "height":"150px"
-      })
-      let $thumbnail = $("<span>", {"id": "aImg"}).append($image)
+      // let $image = $("<img>", {
+      //   "src": thumbnailURL,
+      //   "width": "50px",
+      //   "height":"50px"
+      // })
+      // let $thumbnail = $("<span>", {"id": "aImg"}).append($image)
 
       let $article = $("<span>", {"id": "aText"}).append($hdLn).append($pubDate).append($snippet)
 
       let $articleCard = $("<div>", {"id": "aCard"})
-      $articleCard.prepend($thumbnail).append($article)
+      // $hdLnHREF.append($articleCard.prepend($thumbnail).append($article))
+      $hdLnHREF.append($articleCard.append($article))
 
-      $("#nyt").append($articleCard)
+      $("#news").append($hdLnHREF)
     }
   })
   .catch((error)=> {
@@ -104,23 +106,33 @@ function parseGuardianData(newsURL){
       let $snippet = $("<div>")
       $snippet.append(snippet)
 
-      let $image = $("<img>", {
-        "src": thumbnailURL,
-        "width": "100px",
-        "height":"100px"
-      })
-      let $thumbnail = $("<span>", {"id": "aImg"}).append($image)
+      // let $image = $("<img>", {
+      //   "src": thumbnailURL,
+      //   "width": "50px",
+      //   "height":"50px"
+      // })
+      // let $thumbnail = $("<span>", {"id": "aImg"}).append($image)
+
       let $article = $("<span>", {"id": "aText"}).append($hdLn).append($pubDate).append($snippet)
 
       let $articleCard = $("<div>", {"id": "aCard"})
-      $articleCard.prepend($thumbnail).append($article)
+      // $hdLnHREF.append($articleCard.prepend($thumbnail).append($article))
+      $hdLnHREF.append($articleCard.append($article))
 
-      $("#guardian").append($articleCard)
+      $("#news").append($hdLnHREF)
     }
   })
   .catch((error)=> {
     console.error(error)
   })
+}
+
+function printBegDateRange() {
+  let begDateRange = setBegDate()
+  begDateRange = begDateRange.split("-")
+  begDateRange.push(begDateRange.splice(0, 1))
+  begDateRange = begDateRange.join("-")
+  $("#aDateRange").append(begDateRange)
 }
 
 // HELPER FUNCTIONs to nytURL() & guardianURL(): set begDate (start of date range)

@@ -13,10 +13,10 @@ body {
   width: 95%;
 }
 
-header{
+header {
   text-align: right;
   margin-top: 1rem;
-  padding: 0
+  padding: 0;
 }
 
 header > a > * {
@@ -25,16 +25,16 @@ header > a > * {
 
 a {
   color:rgb(0, 0, 0);
-  margin: 0
+  margin: 0;
 }
 
 a:hover {
   color:rgb(237, 21, 21);
-  text-decoration: none
+  text-decoration: none;
 }
 
 .row {
-  margin-bottom: 0
+  margin-bottom: 0;
 }
 
 .tabs {
@@ -42,30 +42,27 @@ a:hover {
   margin:2em 0 1em 0;
 }
 
-.tabs .tab a{
-  color:black;
+.tabs .tab a {
+  color:rgb(0, 0, 0);
   font-size: 15px;
   font-weight: 475;
 }
 
-.tabs .tab a:hover{
+.tabs .tab a:hover {
   color:rgb(255, 0, 0);
 }
 
-.tabs .indicator{
+.tabs .indicator {
   background-color:rgb(255, 0, 0);
 }
 
-.s12.section {
+.col.s12.section {
   position: relative;
-  margin-top: 1rem;
   background-color:rgba(225, 225, 225, 0.6);
-  overflow-y: scroll;
   padding:2em;
-}
-
-#fullName {
-  /*margin: 0 0 0 0*/
+  max-height: 70vh;
+  min-height: 70vh;
+  overflow-y: scroll;
 }
 
 #shortName {
@@ -74,7 +71,7 @@ a:hover {
   color: rgb(183, 40, 40);
 }
 
-#capital{
+#capital {
   margin: 5px 0 20px 0px;
 }
 
@@ -98,49 +95,58 @@ a:hover {
 #map {
   width: 38rem;
   height: 25rem;
-  padding: 0:
+  padding: 0;
 }
 
-/*h6 {
+h6 {
   font-size: 16px;
-  font-weight: bolder;
   color: rgb(183, 40, 40);
-}*/
-
-/*.sContainer > div {
-  flex-direction: row;
-  margin: 15px 25px 15px 25px;
-  padding: 15px 25px 15px 25px;
-}*/
-
-
-/***************/
-
-
-/*
-.preTravel {
-  max-width: 650px;
 }
 
 .onLocation {
   min-width: 300px;
 }
+
 .currency {
-  max-width: 400px
+  max-width: 400px;
 }
 
-#tLink, #fxRateFootnote{
+.col.s12.form {
+  margin: 0;
+}
+
+#tLink, #fxRateFootnote {
   color: rgb(183, 40, 40);
   font-size: 12px;
+  font-weight: bold;
 }
 
-#transBtn, #fxBtn{
+.input-field.col.s12 {
+  padding: 0 1rem 0 0;
+}
+
+#fxExchanger, #translator {
+  padding:1em 0;
+  border-bottom: 1.5px solid rgb(141, 156, 168);
+}
+
+#fxBtn, #transBtn {
   background-color: rgb(183, 40, 40);
+  margin-bottom: 2rem;
 }
 
-#transLabel, #fxLabel, .textbox {
-  color: rgb(183, 40, 40);
-  font-weight: bolder;
+#fxBtn:hover, #transBtn:hover {
+  color: rgb(255, 255, 255);
+}
+
+#transLabel {
+  color: rgb(141, 156, 168);
+  margin-top:.25rem;
+}
+
+#fxExchanger:focus, #translator:focus {
+  border-bottom: .25px solid rgb(255, 0, 0);
+  box-shadow: 0 .25px 0 0 rgb(255, 0, 0);
 }
 
 #aCard {
@@ -148,52 +154,31 @@ a:hover {
   flex-direction: row;
   align-items:stretch;
   margin: 20px 0 20px 0;
-  border: .5px solid black;
+  border: .5px solid rgb(0, 0, 0);
   padding: 5px 0 5px 10px;
   background-color: rgba(225, 225, 225, 0.6);
 }
 
-#aImg, #aText {
+#aText {
   align-content: space-between;
   margin: 0px 10px 0 0;
 }
-#aImg > img {
-  margin: 5px 0 0 0;
-}
 
-#aText > span > h6{
+#aText > span > h6 {
   margin: 5px 0 0 0;
   font-size: 16px;
 }
 
-#aText > div{
+#aText > div, #aDateRange {
   font-size: 13px;
   margin-top: 5px;
 }
+
 #aHdLn {
   font-size: 11px;
-  font-weight: lighter;
+  /*font-weight: lighter;*/
   margin: 0 0 30px 0;
 }
-.input-field.col.s12{
-  padding: 0 20px 0 0;
-}
-
-#sec3 > .sContainer > div{
-  max-width: 50%;
-}
-
-#sec4 > .sContainer{
-  display: block;
-}
-
-#translator {
-  padding: 0 0 0 0;
-}
-
-#transLabel:active {
-  margin-bottom: 50px
-}*/
 
 footer {
   position: absolute;

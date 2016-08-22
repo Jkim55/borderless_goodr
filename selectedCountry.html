@@ -30,7 +30,7 @@
         </div>
         <!-- section content -->
           <!-- general info section -->
-          <div class="s12 section" id="general">
+          <div class="col s12 section" id="general">
             <!-- first column -->
             <div class="col s4">
               <div class="s1header">
@@ -49,7 +49,9 @@
               <div class="langs">
                 <span id="langCountry">Language(s) spoken in </span>
                 <div class=langFootnote>* denotes an unofficial language of certain regions of the country</div>
-                <ul id="langList"></ul>
+                <ul id="langList">
+                  <!-- ** location: dyn. created ul re languages -->
+                </ul>
               </div>
             </div>
             <!-- second column -->
@@ -60,89 +62,89 @@
             <div class="col s6" id="map"></div>
           </div>
 
-        <!-- visiting info section 2 -->
-      <div class="container section">
-        <div class="row" id="visiting">
-          <div class="col s4">
-            <div class="preTravel">
-              <h5>Travel Advisories</h5>
-              <div id="travelAdvisories">
-                <!-- location for dynamically created TravelAdvisories -->
+          <!-- visiting info section 2 -->
+          <div class="col s12 section" id="visiting">
+            <!-- first column -->
+            <div class="col s6">
+              <div class="trvlAdvisories">
+                <h5>Travel Advisories</h5>
+                <div id="travelAdvisories">
+                  <!-- ** location: dyn. created TravelAdvisories -->
+                </div>
               </div>
-              <div id="vaccinationRecs">
+              <div class="vaccination">
                 <h5>Vaccination Recommendations</h5>
-                <!-- location for dynamically created vaccinationRecs -->
+                <div id="vaccinationRecs">
+                  <!-- ** location: dyn created vaccinationRecs -->
+                </div>
               </div>
               <div class=waterAdvice>
                 <h5>Tap Water Safety</h5>
                 <div id=wAdvice></div>
               </div>
             </div>
-          </div>
-          <div class="col s4">
-            <h5>Utilities &#38; Services</h5>
-            <div class="phone">
-              <h6>Phone Numbers</h6>
-              <div id="cCode">Country Code: </div>
-              <div id="poPo">Police: </div>
+            <!-- second column -->
+            <div class="col s3">
+              <h5>Utilities &#38; Services</h5>
+              <div class="phone">
+                <h6>Phone Numbers</h6>
+                <div id="cCode">Country Code: </div>
+                <div id="poPo">Police: </div>
+              </div>
+              <br>
+              <div class="electical">
+                <h6>Electrical Standards</h6>
+                <div id="voltage">Voltage: </div>
+                <div id="frequency">Frequency: </div>
+                <div id="socket">Socket Type(s): </div>
+              </div>
             </div>
-            <br>
-            <div class="electical">
-              <h6>Electrical Standards</h6>
-              <div id="voltage">Voltage: </div>
-              <div id="frequency">Frequency: </div>
-              <div id="socket">Socket Type(s): </div>
-            </div>
-          </div>
-          <div class="col s4">
-            <div class="fxSummary">
-              <h5>Currency Exchange</h5>
-              <span> The currency in </span>
-              <span id=fxInfo> is </span>
-            </div>
-            <div class="fxWidget">
-              <form id="fxForm"class="col s12">
-                <div class="row">
-                  <div class="input-field col s12">
-                    <textarea id="fxInput" class="materialize-textarea"></textarea>
-                    <div id="fxRateFootnote">
+            <!-- third column -->
+            <div class="col s3">
+              <div class="fxSummary">
+                <h5>Currency Exchange</h5>
+                <span> The currency in </span>
+                <span id=fxInfo> is </span>
+              </div>
+              <div class="fxWidget">
+                <form class="col s12 form">
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <textarea id="fxExchanger" class="materialize-textarea"></textarea>
+                      <div id="fxRateFootnote">
+                      </div>
+                      <label for="fxExchanger">Convert to USD</label>
                     </div>
-                    <label id="fxLabel" for="fxInput">Convert to USD</label>
+                    <a class="waves-effect waves-light btn center-align" id="fxBtn">Calculate Conversion</a>
                   </div>
-                  <a class="waves-effect waves-light btn" id="fxBtn">Calculate Conversion</a>
+                </form>
+                <div id="fxList">
+                  <!-- ** location: user calculated fx rates -->
                 </div>
-              </form>
-              <div id="fxList"></div>  <!-- converted fx rates go here -->
+              </div>
             </div>
           </div>
-        </div>
-      </div>
 
         <!-- current events section 3 -->
-        <div class="col s12" id="news">
-          <div>
-            <h5>The New York Times </h5>
-            <div id="nyt"></div>
-          </div>
-          <div>
-            <h5>The Guardian </h5>
-            <div id="guardian"></div>
-          </div>
+        <div class="col s12 section" id="news">
+          <!-- first & only column -->
+          <h5>Coverage from the New York Times &amp; The Guardian</h5>
+          <div id="aDateRange">Current as of </div>
+          <div id="news"></div>
         </div>
+
         <!-- translator section 4 -->
-        <div class="col s12" id="translate">
-          <div id="transWidget">
-            <h5>Translation Widget</h5>
-            <form id="transForm" class="col s12">
-              <div class="row">
-                <div class="input-field col s12">
-                  <textarea id="translator" class="materialize-textarea"></textarea>
-                  <label for="translator" id="transLabel"> Translate English Phrases</label>
-                </div>
-                <a class="waves-effect waves-light btn" id="transBtn">Translate Phrase</a>
+        <div class="col s12 section" id="translate">
+          <h5>Translation Widget</h5>
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s12">
+                <textarea id="translator" class="materialize-textarea"></textarea>
+                <label for="translator" id="transLabel"> Translate English Phrases</label>
               </div>
-            </form>
-          </div>
+              <a class="waves-effect waves-light btn" id="transBtn">Translate Phrase</a>
+            </div>
+          </form>
           <div id="transResults"></div>
         </div>
       </div>
@@ -162,4 +164,3 @@
     <script src="assets/scripts/selectedCountry.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6eZpeiZmAvkg_cwPD1AtUMoVb4Itn5n4&callback=initMap"></script>
   </body>
-</html>
